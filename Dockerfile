@@ -1,7 +1,6 @@
-FROM nginx:1.15-alpine
+FROM envoyr/nginx:latest
 
 COPY nginx-default.conf.template /etc/nginx/conf.d/default.conf.template
-COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY docker-entrypoint.sh /
 RUN ["chmod", "+x", "/docker-entrypoint.sh"]
